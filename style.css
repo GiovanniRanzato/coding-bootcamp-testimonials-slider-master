@@ -23,9 +23,9 @@ body {
     flex-flow: column;
     justify-content: space-evenly;
 
-
+    background-color: #fff;
     background-image: url("./images/pattern-curve.svg");
-    background-size: 100%;
+    background-size: 275px 70px;
     background-position-y: bottom;
     background-position-x: left;
     background-repeat: no-repeat;
@@ -93,13 +93,24 @@ box-shadow: 0px 16px 50px 5px rgba(128,128,147,0.5);
 #slideController:first-child {
     margin-right: 6px;
 }
-#slideController img {
-    margin: 12px
+
+.button{
+    border-radius: 25px;
+    width:46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button:hover {
+    background-color:#F4F4FC;
+    cursor: pointer;
 }
 /* FOOTER */
 .attribution { 
     font-size: 11px; 
-    text-align: center; 
+    text-align: center;
+    margin: 0px; 
     padding: 16px;
 }
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -157,12 +168,7 @@ box-shadow: 0px 16px 50px 5px rgba(128,128,147,0.5);
         position: absolute;
         bottom: 24px;
         left: 130px;
-        border-radius: 30px;
     }
-    #slideController img {
-        margin: 20px
-    }
-
 }
 
 

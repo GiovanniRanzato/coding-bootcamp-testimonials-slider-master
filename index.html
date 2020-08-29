@@ -25,11 +25,11 @@
   <div id="mainContainer">
     <div id="visualContainer">
       <div id="visual">
-        <img src="./images/image-tanya.jpg" />
+        <img id="visualImg" src="./images/image-tanya.jpg" />
       </div>
       <div id="slideController">
-        <img src="./images/icon-prev.svg"></svg>
-        <img src="./images/icon-next.svg"></svg>
+        <div class="button" onclick="switchSlide(-1)"><img src="./images/icon-prev.svg" /></div>
+        <div class="button" onclick="switchSlide(1)"><img src="./images/icon-next.svg" /></div>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Giovanni Ranzato</a>.
+    Coded by <a href="https://www.linkedin.com/in/giovanni-ranzato-48713b12b/">Giovanni Ranzato</a>.
   </footer>
 </body>
 <script src="./functions.js">
