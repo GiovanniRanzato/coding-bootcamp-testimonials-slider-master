@@ -1,4 +1,6 @@
-var slideIndex = 0;
+let slideIndex = 0;
+let rotation = false;
+let first = true
 const data = [{
     name: "Tanya Sinclair",
     role: "UX Engineer",
@@ -13,11 +15,29 @@ const data = [{
 }];
 showSlide(slideIndex);
 
-
 function showSlide(index){
-    document.getElementById("messageText").innerHTML = data[index].message;
-    document.getElementById("messageName").innerHTML = data[index].name + "<span>" + data[index].role + "</span>" ;
-    document.getElementById("visualImg").setAttribute('src', data[index].image); 
+    document.getElementById("message").setAttribute('class', 'fadeOut');
+    setTimeout(function () {
+        document.getElementById("messageText").innerHTML = data[index].message;
+        document.getElementById("messageName").innerHTML = data[index].name + "<span>" + data[index].role + "</span>";
+        document.getElementById("message").setAttribute('class', 'fadeIn');
+    }, 500);
+    if(rotation){
+        document.getElementById("visual").setAttribute('class', 'rotateY90');
+        setTimeout(function(){ 
+            document.getElementById("visualImg").setAttribute('src', data[index].image); 
+            document.getElementById("visual").setAttribute('class', 'rotateY180');
+            rotation = !rotation;
+         }, 500);
+         
+    }else{
+        document.getElementById("visual").setAttribute('class', 'rotateY90');
+        setTimeout(function(){ 
+            document.getElementById("visualImg").setAttribute('src', data[index].image); 
+            document.getElementById("visual").setAttribute('class', 'rotateY0');
+            rotation = !rotation;
+         }, 500);
+    } 
 }
 function switchSlide (flow){
     slideIndex=slideIndex+flow;
