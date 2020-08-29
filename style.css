@@ -15,21 +15,23 @@ body {
 .text-grayish-blu{
     color:hsl(240, 18%, 77%);
 }
-/* FOOTER */
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
-    padding: 16px;
-}
-.attribution a { color: hsl(228, 45%, 44%); }
-
-/* MESSAGE */
+/* MAIN CONTAINER*/
+/* add an empty pseudo element to better fit emty spaces between elements */
 #mainContainer {
     min-height: 100vh;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
+
+    background-image: url("./images/pattern-curve.svg");
+    background-size: 100%;
+    background-position-y: bottom;
+    background-position-x: left;
+    background-repeat: no-repeat;
 }
+
+/* MESSAGE */
 #message{
     text-align: center;
     padding: 28px 32px 0 32px;
@@ -50,28 +52,15 @@ body {
     font-weight: 500;
     color:hsl(240, 18%, 77%);
 }
-#footerBackground {
-    min-height: 70px;
-    width: 100%;
-    background-image: url("./images/pattern-curve.svg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-/* MAIN CONTAINER*/
-/* add an empty pseudo element to better fit emty spaces between elements */
-#mainContainer::before{
-    content: '';
-}
+
 /* VISUAL */
 #visualContainer {
     position: relative;
     min-height: 310px;
-    margin: 54px 25px;
     background-image: url("./images/pattern-bg.svg");
     background-size: 325px 310px;
     background-repeat: no-repeat;
     background-position: center;
-
 
     display: flex;
     flex-flow: column;
@@ -107,12 +96,74 @@ box-shadow: 0px 16px 50px 5px rgba(128,128,147,0.5);
 #slideController img {
     margin: 12px
 }
+/* FOOTER */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    padding: 16px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
 
-/* RESPONSIVE DESIGN TABLET - DESKTOP */
-@media only screen and (min-width: 900px){
+/* RESPONSIVE DESIGN DESKTOP */
+@media only screen and (min-width: 1200px){
+    #mainContainer {
+        flex-flow: row-reverse;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        font-size: 32px;
+        background-size: 620px 170px;
+    }
+    #messageContainer{
+        position: absolute;
+        left: 140px;
+    }
+    #message{
+        padding:0;
+        height: 100%;
+
+        background-position-x: 90px;
+        background-size: 130px;
+
+        display:flex;
+        flex-flow: column;
+        justify-content: center;
+        text-align: left;
+        z-index: 1;
+        width: 630px;
+    }
+    #messageText{
+        padding-top:70px;
+    }
+    #messageName{
+        display: block;
+    }
+    #messageName span{
+        margin-left: 8px;
+    }
+
+    #visualContainer {
+        position: absolute;
+        right: 75px;
+        min-height: 640px;
+        min-width: 700px;
+        background-size: 700px 640px; 
+    }
+    #visual {
+        width: 540px;
+        height: 540px;
+    }
+    #slideController {
+        position: absolute;
+        bottom: 24px;
+        left: 130px;
+        border-radius: 30px;
+    }
+    #slideController img {
+        margin: 20px
+    }
 
 }
-
 
 
 
