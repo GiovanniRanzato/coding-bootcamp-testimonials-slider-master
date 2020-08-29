@@ -35,6 +35,7 @@ body {
 /* MESSAGE */
 #message{
     max-width: 630px;
+    min-height: 240px;
     text-align: center;
     padding: 28px 32px 0 32px;
     background-image: url("./images/pattern-quotes.svg");
@@ -77,6 +78,7 @@ body {
     width: 250px;
     height: 250px;
     transition: transform 0.5s;
+    transition: position 0,5s;
     transform-style: preserve-3d;
     position: relative;
 }
