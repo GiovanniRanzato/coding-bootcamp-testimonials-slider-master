@@ -27,6 +27,16 @@ const data = [{
 },
 ];
 showSlide(slideIndex);
+window.addEventListener("keydown", function(e) {
+    const btnPressed = e.code;
+    switch(btnPressed){
+        case "ArrowLeft": switchSlide (-1); break;
+        case "ArrowRight": switchSlide (1); break;
+        default: return;
+    }
+    return
+   });
+
 
 function showSlide(index){
     document.getElementById("message").setAttribute('class', 'fadeOut');
